@@ -1,5 +1,6 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
+import Spiner from 'services/spiner';
 
 export default function Navigation() {
   return (
@@ -8,7 +9,7 @@ export default function Navigation() {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/movies">Movies</NavLink>
       </nav>
-      <Suspense fallback={<p>Loading...</p>}>
+      <Suspense fallback={<Spiner />}>
         <Outlet />
       </Suspense>
     </div>

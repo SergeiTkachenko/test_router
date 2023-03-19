@@ -1,4 +1,4 @@
-import { Layout } from './style/Layout';
+import { Container } from './style/Container';
 import { GlobalStyle } from './style/GlobalStyle';
 import { Route, Routes } from 'react-router-dom';
 import Home from 'pages/Home';
@@ -8,7 +8,7 @@ import Navigation from './Navigation/Navigation';
 
 export default function App() {
   return (
-    <Layout>
+    <Container>
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
@@ -17,6 +17,6 @@ export default function App() {
         </Route>
       </Routes>
       <GlobalStyle />
-    </Layout>
+    </Container>
   );
 }
