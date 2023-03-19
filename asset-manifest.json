@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/test_router/static/css/main.c3d5249d.css",
-    "main.js": "/test_router/static/js/main.245e224a.js",
+    "main.js": "/test_router/static/js/main.e8b337dc.js",
     "index.html": "/test_router/index.html",
     "main.c3d5249d.css.map": "/test_router/static/css/main.c3d5249d.css.map",
-    "main.245e224a.js.map": "/test_router/static/js/main.245e224a.js.map"
+    "main.e8b337dc.js.map": "/test_router/static/js/main.e8b337dc.js.map"
   },
   "entrypoints": [
     "static/css/main.c3d5249d.css",
-    "static/js/main.245e224a.js"
+    "static/js/main.e8b337dc.js"
   ]
 }
