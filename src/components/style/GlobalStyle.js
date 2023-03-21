@@ -29,4 +29,23 @@ img {
   height: auto;
 }
 
+
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
 `;
