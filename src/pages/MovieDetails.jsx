@@ -1,6 +1,12 @@
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { MagnifyingGlass } from 'react-loader-spinner';
-import { useParams, useLocation, useNavigate } from 'react-router-dom';
+import {
+  useParams,
+  useLocation,
+  useNavigate,
+  NavLink,
+  Outlet,
+} from 'react-router-dom';
 import { getMoviesDetailsById } from 'services/API';
 
 const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w200';
@@ -32,6 +38,17 @@ export default function MovieDetails() {
       </button>
       <h2>{movie.title}</h2>
       <img src={BASE_IMG_URL + movie.poster_path} alt={movie.title} />
+
+      <p>{movie.overview}</p>
+      <NavLink state={{ from: location?.state?.from ?? '/' }} to="cast">
+        Cast
+      </NavLink>
+      <NavLink state={{ from: location?.state?.from ?? '/' }} to="reviews">
+        Reviews
+      </NavLink>
+      <Suspense fallback={<MagnifyingGlass />}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 }
