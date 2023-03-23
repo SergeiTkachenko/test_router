@@ -7,6 +7,7 @@ import MovieDetails from 'pages/MovieDetails';
 import Navigation from './Navigation/Navigation';
 import Cast from './Cast/Cast';
 import Reviews from './Reviews/Reviews';
+import TopRatedMovies from 'pages/TopRatedMovies';
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
+          <Route path="/top_movies" element={<TopRatedMovies />} />
           <Route path="/movies" element={<Movies />} />
           <Route path="/movies/:id" element={<MovieDetails />}>
             <Route path="cast" element={<Cast />} />

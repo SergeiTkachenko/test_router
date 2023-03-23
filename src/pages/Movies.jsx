@@ -3,15 +3,23 @@ import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getMoviesByQuery } from 'services/API';
 
+import { MagnifyingGlass } from 'react-loader-spinner';
+import { toast } from 'react-toastify';
+
 export default function Movies() {
   const [movies, setMovies] = useState([]);
   const [params, searchParams] = useSearchParams();
   const query = params.get('query');
   const [value, setValue] = useState(query ?? '');
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (!query) return;
-    getMoviesByQuery(query).then(setMovies);
+    setLoading(true);
+    getMoviesByQuery(query)
+      .then(setMovies)
+      .catch(error => toast.error(error))
+      .finally(() => setLoading(false));
   }, [query]);
 
   const handleSubmit = e => {
@@ -20,7 +28,7 @@ export default function Movies() {
   };
   return (
     <div>
-      <h2>Movies</h2>
+      {loading && <MagnifyingGlass />}
       <form onSubmit={handleSubmit}>
         <input
           value={value}

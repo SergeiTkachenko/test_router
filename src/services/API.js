@@ -19,6 +19,11 @@ export async function getTrendingMovies() {
   return movies.data.results;
 }
 
+export async function getTopMovies() {
+  const movies = await agent.get('movie/top_rated');
+  return movies.data.results;
+}
+
 export async function getMoviesDetailsById(id) {
   const movies = await agent.get(`movie/${id}`);
   return movies.data;

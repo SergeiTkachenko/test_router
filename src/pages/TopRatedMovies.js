@@ -1,18 +1,18 @@
-import { getTrendingMovies } from 'services/API';
+import { getTopMovies } from 'services/API';
 import { useEffect, useState } from 'react';
 import MovieList from 'components/MoviesList/MovieList';
 import { MagnifyingGlass } from 'react-loader-spinner';
 import { toast } from 'react-toastify';
 
-export default function Home() {
+export default function TopRatedMovies() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  getTrendingMovies();
+  getTopMovies();
 
   useEffect(() => {
     setLoading(true);
-    getTrendingMovies()
+    getTopMovies()
       .then(setMovies)
       .catch(error => toast.error(error))
       .finally(() => setLoading(false));
@@ -20,7 +20,6 @@ export default function Home() {
 
   return (
     <div>
-     
       {loading && <MagnifyingGlass />}
       <MovieList movies={movies} />
     </div>
