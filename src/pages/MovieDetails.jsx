@@ -1,5 +1,5 @@
+import Spiner from 'components/Spiner/spiner';
 import { Suspense, useEffect, useState } from 'react';
-import { MagnifyingGlass } from 'react-loader-spinner';
 import {
   useParams,
   useLocation,
@@ -28,7 +28,7 @@ export default function MovieDetails() {
   }, [id]);
 
   if (!movie) {
-    return <MagnifyingGlass />;
+    return <Spiner></Spiner>;
   }
 
   return (
@@ -46,7 +46,7 @@ export default function MovieDetails() {
       <NavLink state={{ from: location?.state?.from ?? '/' }} to="reviews">
         Reviews
       </NavLink>
-      <Suspense fallback={<MagnifyingGlass />}>
+      <Suspense fallback={<Spiner></Spiner>}>
         <Outlet />
       </Suspense>
     </div>

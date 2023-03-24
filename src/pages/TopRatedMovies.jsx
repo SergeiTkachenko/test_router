@@ -1,18 +1,18 @@
-import { getTrendingMovies } from 'services/API';
+import { getTopMovies } from 'services/API';
 import { useEffect, useState } from 'react';
 import MovieList from 'components/MoviesList/MovieList';
 import { toast } from 'react-toastify';
 import Spiner from 'components/Spiner/spiner';
 
-export default function Home() {
+export default function TopRatedMovies() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  getTrendingMovies();
+  getTopMovies();
 
   useEffect(() => {
     setLoading(true);
-    getTrendingMovies()
+    getTopMovies()
       .then(setMovies)
       .catch(error => toast.error(error))
       .finally(() => setLoading(false));

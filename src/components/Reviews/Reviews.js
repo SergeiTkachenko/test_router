@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieReviews } from 'services/API';
-import { MagnifyingGlass } from 'react-loader-spinner';
 import { toast } from 'react-toastify';
+import Spiner from 'components/Spiner/spiner';
 
 export default function Reviews() {
   const [reviews, setReviews] = useState([]);
@@ -20,7 +20,7 @@ export default function Reviews() {
   return (
     <div>
       <h2>Reviews</h2>
-      {loading && <MagnifyingGlass />}
+      {loading && <Spiner></Spiner>}
       <ul>
         {reviews.map(({ content, author, id }) => (
           <li key={id}>

@@ -1,18 +1,18 @@
-import { getTopMovies } from 'services/API';
 import { useEffect, useState } from 'react';
 import MovieList from 'components/MoviesList/MovieList';
-import { MagnifyingGlass } from 'react-loader-spinner';
 import { toast } from 'react-toastify';
+import { getPopularMovies } from 'services/API';
+import Spiner from 'components/Spiner/spiner';
 
-export default function TopRatedMovies() {
+export default function PopularMovies() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  getTopMovies();
+  getPopularMovies();
 
   useEffect(() => {
     setLoading(true);
-    getTopMovies()
+    getPopularMovies()
       .then(setMovies)
       .catch(error => toast.error(error))
       .finally(() => setLoading(false));
@@ -20,7 +20,7 @@ export default function TopRatedMovies() {
 
   return (
     <div>
-      {loading && <MagnifyingGlass />}
+      {loading && <Spiner></Spiner>}
       <MovieList movies={movies} />
     </div>
   );

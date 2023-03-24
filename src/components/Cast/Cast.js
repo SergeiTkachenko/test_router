@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieCast } from 'services/API';
-import { MagnifyingGlass } from 'react-loader-spinner';
+
 import { toast } from 'react-toastify';
+import Spiner from 'components/Spiner/spiner';
 
 const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w200';
 
@@ -22,7 +23,7 @@ export default function Cast() {
   return (
     <div>
       <h2>Cast</h2>
-      {loading && <MagnifyingGlass />}
+      {loading && <Spiner></Spiner>}
       <ul>
         {cast.map(({ profile_path, name, character, cast_id }) => (
           <li key={cast_id}>
