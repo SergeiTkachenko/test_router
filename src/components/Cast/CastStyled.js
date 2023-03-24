@@ -43,8 +43,8 @@ export const CastItemStyled = styled.li`
   &:hover,
   &:focus {
     cursor: pointer;
-    box-shadow: rgba(45, 78, 224, 0.25) 0px 10px 20px 10px,
-      rgba(12, 63, 231, 0.3) 0px 10px 7px -2px;
+    box-shadow: rgba(0, 1, 2, 0.25) 0px 15px 20px 10px,
+      rgba(0, 4, 10, 0.25) 0px 10px 10px -2px;
     transform: scale(1.03);
   }
 `;

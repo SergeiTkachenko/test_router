@@ -43,8 +43,8 @@ export const MovieItemStyled = styled.li`
   &:hover,
   &:focus {
     cursor: pointer;
-    box-shadow: rgba(45, 78, 224, 0.25) 0px 10px 20px 10px,
-      rgba(12, 63, 231, 0.3) 0px 10px 7px -2px;
-    transform: scale(1.03);
+    box-shadow: rgba(77, 41, 238, 0.5) 0px 15px 25px 10px,
+      rgba(0, 4, 10, 0.5) 0px 10px 15px -2px;
+    transform: scale(1.02);
   }
 `;
