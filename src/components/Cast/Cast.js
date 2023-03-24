@@ -4,6 +4,8 @@ import { getMovieCast } from 'services/API';
 
 import { toast } from 'react-toastify';
 import Spiner from 'components/Spiner/spiner';
+import { CastItemStyled, CastListStyled } from './CastStyled';
+import defaultImg from '../../images/movie-pic.jpg';
 
 const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w200';
 
@@ -22,17 +24,19 @@ export default function Cast() {
 
   return (
     <div>
-      <h2>Cast</h2>
       {loading && <Spiner></Spiner>}
-      <ul>
+      <CastListStyled>
         {cast.map(({ profile_path, name, character, cast_id }) => (
-          <li key={cast_id}>
-            <img src={BASE_IMG_URL + profile_path} alt={name} />
+          <CastItemStyled key={cast_id}>
+            <img
+              src={profile_path ? BASE_IMG_URL + profile_path : defaultImg}
+              alt={name}
+            />
             <h3>{name}</h3>
             <h4>As: {character}</h4>
-          </li>
+          </CastItemStyled>
         ))}
-      </ul>
+      </CastListStyled>
     </div>
   );
 }

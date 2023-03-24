@@ -12,8 +12,6 @@ import MovieList from 'components/MoviesList/MovieList';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getMoviesByQuery } from 'services/API';
-
-// import { MagnifyingGlass } from 'react-loader-spinner';
 import { toast } from 'react-toastify';
 
 export default function Navigation() {

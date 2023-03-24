@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getMovieReviews } from 'services/API';
 import { toast } from 'react-toastify';
 import Spiner from 'components/Spiner/spiner';
+import { ReviewsItemStyled, ReviewsListStyled } from './Reviws.styled';
 
 export default function Reviews() {
   const [reviews, setReviews] = useState([]);
@@ -19,16 +20,15 @@ export default function Reviews() {
 
   return (
     <div>
-      <h2>Reviews</h2>
       {loading && <Spiner></Spiner>}
-      <ul>
+      <ReviewsListStyled>
         {reviews.map(({ content, author, id }) => (
-          <li key={id}>
+          <ReviewsItemStyled key={id}>
             <h3>{author}</h3>
             <p>{content}</p>
-          </li>
+          </ReviewsItemStyled>
         ))}
-      </ul>
+      </ReviewsListStyled>
     </div>
   );
 }

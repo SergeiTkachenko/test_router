@@ -3,7 +3,7 @@ import { GlobalStyle } from './style/GlobalStyle';
 import { Route, Routes } from 'react-router-dom';
 import Home from 'pages/Home';
 // import Movies from 'pages/Movies';
-import MovieDetails from 'pages/MovieDetails';
+import MovieDetails from 'pages/MovieDetails/MovieDetails';
 import Navigation from './Navigation/Navigation';
 import Cast from './Cast/Cast';
 import Reviews from './Reviews/Reviews';

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  background: #345977;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 16px;

@@ -15,6 +15,12 @@ html {
   box-sizing: border-box;
   width: 100vw;
   overflow-x: hidden;
+  
+}
+
+#root {
+background-color: #280569;
+  
 }
 
 *,
