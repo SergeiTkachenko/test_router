@@ -18,13 +18,23 @@ export default function Navigation() {
   const [movies, setMovies] = useState([]);
   const [params, searchParams] = useSearchParams();
   const query = params.get('query');
-  const [value, setValue] = useState(query ?? '');
+  const [value, setValue] = useState(params.get('query') ?? '');
+  const [prevQuery, setPrevQuery] = useState('');
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
 
   useEffect(() => {
+    if (prevQuery && prevQuery !== query) {
+      setMovies([]);
+      setPage(1);
+    }
+    setPrevQuery(query);
+  }, [query, prevQuery]);
+
+  useEffect(() => {
     if (!query) return;
     setLoading(true);
+
     getMoviesByQuery(query, page)
       .then(newMovies => {
         setMovies(movies => [...movies, ...newMovies]);
