@@ -34,6 +34,7 @@ export default function Navigation() {
   useEffect(() => {
     if (!query) return;
     setLoading(true);
+    setPage(1);
 
     getMoviesByQuery(query, page)
       .then(newMovies => {
