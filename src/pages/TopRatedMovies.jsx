@@ -7,15 +7,40 @@ import Spiner from 'components/Spiner/spiner';
 export default function TopRatedMovies() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [page, setPage] = useState(1);
 
-  getTopMovies();
+  // getTopMovies();
 
+  // useEffect(() => {
+  //   setLoading(true);
+  //   getTopMovies()
+  //     .then(setMovies)
+  //     .catch(error => toast.error(error))
+  //     .finally(() => setLoading(false));
+  // }, []);
   useEffect(() => {
     setLoading(true);
-    getTopMovies()
-      .then(setMovies)
+    getTopMovies(page)
+      .then(newMovies => {
+        setMovies(movies => [...movies, ...newMovies]);
+      })
       .catch(error => toast.error(error))
       .finally(() => setLoading(false));
+  }, [page]);
+
+  function handleScroll() {
+    const bottom =
+      Math.ceil(window.innerHeight + window.scrollY) >=
+      document.documentElement.scrollHeight;
+
+    if (bottom) {
+      setPage(page => page + 1);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (

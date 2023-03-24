@@ -20,15 +20,33 @@ export default function Navigation() {
   const query = params.get('query');
   const [value, setValue] = useState(query ?? '');
   const [loading, setLoading] = useState(false);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     if (!query) return;
     setLoading(true);
-    getMoviesByQuery(query)
-      .then(setMovies)
+    getMoviesByQuery(query, page)
+      .then(newMovies => {
+        setMovies(movies => [...movies, ...newMovies]);
+      })
       .catch(error => toast.error(error))
       .finally(() => setLoading(false));
-  }, [query]);
+  }, [query, page]);
+
+  function handleScroll() {
+    const bottom =
+      Math.ceil(window.innerHeight + window.scrollY) >=
+      document.documentElement.scrollHeight;
+
+    if (bottom) {
+      setPage(page => page + 1);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleSubmit = e => {
     e.preventDefault();

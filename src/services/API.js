@@ -7,30 +7,30 @@ const agent = axios.create({
   params: { api_key: '054a53d1d89c0404ad32bb4578c2c68b' },
 });
 
-export async function getMoviesByQuery(query) {
-  const movies = await agent.get('search/movie', {
+export async function getMoviesByQuery(query, page) {
+  const movies = await agent.get(`search/movie?page=${page}`, {
     params: { query },
   });
   return movies.data.results;
 }
 
-export async function getTrendingMovies() {
-  const movies = await agent.get('trending/movie/day');
+export async function getTrendingMovies(page) {
+  const movies = await agent.get(`trending/movie/day?page=${page}`);
   return movies.data.results;
 }
 
-export async function getTopMovies() {
-  const movies = await agent.get('movie/top_rated');
+export async function getTopMovies(page) {
+  const movies = await agent.get(`movie/top_rated?page=${page}`);
   return movies.data.results;
 }
 
-export async function getUpcomingMovies() {
-  const movies = await agent.get('movie/upcoming');
+export async function getUpcomingMovies(page) {
+  const movies = await agent.get(`movie/upcoming?page=${page}`);
   return movies.data.results;
 }
 
-export async function getPopularMovies() {
-  const movies = await agent.get('movie/popular');
+export async function getPopularMovies(page) {
+  const movies = await agent.get(`movie/popular?page=${page}`);
   return movies.data.results;
 }
 
