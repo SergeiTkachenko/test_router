@@ -35,8 +35,6 @@ export default function Navigation() {
   useEffect(() => {
     if (!query) return;
     setLoading(true);
-    setPage(1);
-
     getMoviesByQuery(query, page)
       .then(newMovies => {
         setMovies(movies => [...movies, ...newMovies]);
@@ -70,8 +68,8 @@ export default function Navigation() {
       <div>
         <div
           style={{
-            backgroundImage: ` linear-gradient(to top, rgba(14, 48, 241, 0.3), rgba(117, 141, 199, 0.4)), url(${headerBkg})`,
-            padding: '20px',
+            backgroundImage: ` linear-gradient(to top, rgba(3, 20, 119, 0.4), rgba(4, 55, 173, 0.4)), url(${headerBkg})`,
+            padding: '30px',
             marginBottom: '20px',
             backgroundSize: 'cover',
             backgroundPosition: 'center center',
@@ -105,10 +103,10 @@ export default function Navigation() {
       <div>
         <div
           style={{
-            backgroundImage: ` linear-gradient(to top, rgba(14, 48, 241, 0.3), rgba(117, 141, 199, 0.4)), url(${headerBkg})`,
-            backgroundSize: 'cover',
-            padding: '20px',
+            backgroundImage: ` linear-gradient(to top, rgba(3, 20, 119, 0.4), rgba(4, 55, 173, 0.4)), url(${headerBkg})`,
+            padding: '30px',
             marginBottom: '20px',
+            backgroundSize: 'cover',
             backgroundPosition: 'center center',
           }}
         >

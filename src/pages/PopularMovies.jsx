@@ -9,17 +9,9 @@ export default function PopularMovies() {
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
 
-  // getPopularMovies();
-
-  // useEffect(() => {
-  //   setLoading(true);
-  //   getPopularMovies()
-  //     .then(setMovies)
-  //     .catch(error => toast.error(error))
-  //     .finally(() => setLoading(false));
-  // }, []);
   useEffect(() => {
     setLoading(true);
+
     getPopularMovies(page)
       .then(newMovies => {
         setMovies(movies => [...movies, ...newMovies]);

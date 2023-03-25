@@ -20,6 +20,7 @@ export default function TopRatedMovies() {
   // }, []);
   useEffect(() => {
     setLoading(true);
+
     getTopMovies(page)
       .then(newMovies => {
         setMovies(movies => [...movies, ...newMovies]);

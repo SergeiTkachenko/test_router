@@ -11,6 +11,7 @@ import TopRatedMovies from 'pages/TopRatedMovies';
 import PopularMovies from 'pages/PopularMovies';
 import UpcomingMovies from 'pages/UpcomingMovies';
 import { UpBtn } from './style/UpBtn';
+import Footer from './Footer/Footer';
 
 export default function App() {
   const [showButton, setShowButton] = useState(false);
@@ -42,6 +43,7 @@ export default function App() {
           </Route>
         </Route>
       </Routes>
+      <Footer />
       {showButton && <UpBtn onClick={handleClickUp}>UP</UpBtn>}
       <GlobalStyle />
     </Container>

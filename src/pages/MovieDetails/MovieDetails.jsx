@@ -45,7 +45,7 @@ export default function MovieDetails() {
           backgroundPosition: 'center center',
           height: '100%',
           width: '100%',
-          padding: '10px',
+          padding: '30px',
         }}
       >
         <BackBtn type="button" onClick={handleGoBack}>

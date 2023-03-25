@@ -21,6 +21,7 @@ export default function UpcomingMovies() {
 
   useEffect(() => {
     setLoading(true);
+
     getUpcomingMovies(page)
       .then(newMovies => {
         setMovies(movies => [...movies, ...newMovies]);
