@@ -31,7 +31,7 @@ export default function TopRatedMovies() {
 
   function handleScroll() {
     const bottom =
-      Math.ceil(window.innerHeight + window.scrollY) >=
+      Math.ceil(window.innerHeight + window.scrollY + 400) >=
       document.documentElement.scrollHeight;
 
     if (bottom) {

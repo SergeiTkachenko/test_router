@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const ReviewsListStyled = styled.ul`
+  word-wrap: break-word;
+  white-space: pre-wrap;
   @media screen and (min-width: 768px) {
     display: flex;
     flex-wrap: wrap;
@@ -19,6 +21,7 @@ export const ReviewsItemStyled = styled.li`
   padding: 5px;
   border-radius: 5px;
   width: 100%;
+
   background: #e9f5f8ff;
 
   &:not(:last-child) {
@@ -33,11 +36,13 @@ export const ReviewsItemStyled = styled.li`
     box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
     transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  &:hover,
-  &:focus {
-    cursor: pointer;
-    box-shadow: rgba(45, 78, 224, 0.25) 0px 10px 20px 10px,
-      rgba(12, 63, 231, 0.3) 0px 10px 7px -2px;
-    transform: scale(1.1);
+  @media screen and (min-width: 768px) {
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      box-shadow: rgba(45, 78, 224, 0.25) 0px 10px 20px 10px,
+        rgba(12, 63, 231, 0.3) 0px 10px 7px -2px;
+      transform: scale(1.1);
+    }
   }
 `;

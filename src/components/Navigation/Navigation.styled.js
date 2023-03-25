@@ -3,16 +3,25 @@ import { NavLink } from 'react-router-dom';
 
 export const NavigationStyled = styled.div`
   height: 100px;
-  gap: 16px;
+  gap: 6px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   text-decoration: none;
   justify-content: center;
+
+  @media screen and (min-width: 768px) {
+    gap: 10px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    gap: 16px;
+  }
 `;
 
 export const NavLinkStyled = styled(NavLink)`
   font-weight: 600;
-  padding: 10px 20px;
+  padding: 5px 10px;
   border-radius: 6px;
   color: black;
   background-color: #3bb4fa;
@@ -21,6 +30,16 @@ export const NavLinkStyled = styled(NavLink)`
   transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+
+    padding: 10px 20px;
+  }
+
+  @media screen and (min-width: 1280px) {
+  }
 
   &.active {
     color: white;
@@ -42,14 +61,30 @@ export const FormStyled = styled.form`
   display: flex;
   text-decoration: none;
   justify-content: center;
-  gap: 12px;
+  gap: 5px;
   margin-bottom: 24px;
+  flex-wrap: wrap;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    justify-content: center;
+  }
+
+  @media screen and (min-width: 1280px) {
+    gap: 16px;
+  }
 `;
 
 export const InputStyled = styled.input`
   height: 36px;
-  width: 300px;
+  max-width: 300px;
   border-radius: 5px;
+  @media screen and (min-width: 768px) {
+    width: 300px;
+  }
 `;
 
 export const SearchBtn = styled.button`

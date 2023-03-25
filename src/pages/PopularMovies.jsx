@@ -22,10 +22,11 @@ export default function PopularMovies() {
 
   function handleScroll() {
     const bottom =
-      Math.ceil(window.innerHeight + window.scrollY) >=
+      Math.ceil(window.innerHeight + window.scrollY + 400) >=
       document.documentElement.scrollHeight;
 
     if (bottom) {
+      console.log(111);
       setPage(page => page + 1);
     }
   }

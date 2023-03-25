@@ -45,13 +45,15 @@ export default function Navigation() {
 
   function handleScroll() {
     const bottom =
-      Math.ceil(window.innerHeight + window.scrollY) >=
+      Math.ceil(window.innerHeight + window.scrollY + 400) >=
       document.documentElement.scrollHeight;
 
     if (bottom) {
       setPage(page => page + 1);
+      console.log(1);
     }
   }
+  console.log(2);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -60,7 +62,7 @@ export default function Navigation() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    searchParams({ query: e.target.query.value, page: 1 });
+    searchParams({ query: e.target.query.value.trim(), page: 1 });
     setValue(e.target.query.value);
     setPage(1);
   };

@@ -5,9 +5,13 @@ import { getMoviesDetailsById } from 'services/API';
 import defaultImg from '../../images/movie-pic.jpg';
 import {
   BackBtn,
+  DetailsContainer,
   DetailsWrap,
   ImgDetails,
   NavLinkDetails,
+  NavLinkDetailsWrapper,
+  OverviewStyled,
+  TitleStyled,
 } from './MovieDetails.styled';
 
 const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w500';
@@ -32,10 +36,8 @@ export default function MovieDetails() {
   if (!movie) {
     return <Spiner></Spiner>;
   }
-  // backdrop_path
-  console.log(movie);
   return (
-    <div>
+    <DetailsContainer>
       <div
         style={{
           backgroundImage: ` linear-gradient(to top, rgba(14, 48, 241, 0.3), rgba(117, 141, 199, 0.4)), url(${
@@ -45,14 +47,15 @@ export default function MovieDetails() {
           backgroundPosition: 'center center',
           height: '100%',
           width: '100%',
-          padding: '30px',
+          padding: '0 15px 15px 30px',
+          marginBottom: '15px',
         }}
       >
         <BackBtn type="button" onClick={handleGoBack}>
           Go back
         </BackBtn>
 
-        <h2>{movie.title}</h2>
+        <TitleStyled>{movie.title}</TitleStyled>
         <DetailsWrap>
           <ImgDetails
             src={
@@ -61,39 +64,33 @@ export default function MovieDetails() {
             alt={movie.title}
           />
 
-          <p
-            style={{
-              backgroundColor: 'rgba(77, 101, 161, 0.7)',
-              height: '100%',
-              padding: '10px',
-            }}
-          >
-            {movie.overview}
-          </p>
+          <OverviewStyled>{movie.overview}</OverviewStyled>
         </DetailsWrap>
 
-        <NavLinkDetails
-          state={{ from: location?.state?.from ?? '/' }}
-          to="cast"
-        >
-          Cast
-        </NavLinkDetails>
-        <NavLinkDetails
-          state={{ from: location?.state?.from ?? '/' }}
-          to="reviews"
-        >
-          Reviews
-        </NavLinkDetails>
-        {/* <NavLinkDetails
+        <NavLinkDetailsWrapper>
+          <NavLinkDetails
+            state={{ from: location?.state?.from ?? '/' }}
+            to="cast"
+          >
+            Cast
+          </NavLinkDetails>
+          <NavLinkDetails
+            state={{ from: location?.state?.from ?? '/' }}
+            to="reviews"
+          >
+            Reviews
+          </NavLinkDetails>
+          {/* <NavLinkDetails
           state={{ from: location?.state?.from ?? '/' }}
           to="reviews"
         >
           Treiler
         </NavLinkDetails> */}
+        </NavLinkDetailsWrapper>
       </div>
       <Suspense fallback={<Spiner></Spiner>}>
         <Outlet />
       </Suspense>
-    </div>
+    </DetailsContainer>
   );
 }

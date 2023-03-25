@@ -25,7 +25,7 @@ export default function Reviews() {
         {reviews.map(({ content, author, id }) => (
           <ReviewsItemStyled key={id}>
             <h3>{author}</h3>
-            <p>{content}</p>
+            <div style={{ wordWrap: 'break-word' }}>{content}</div>
           </ReviewsItemStyled>
         ))}
       </ReviewsListStyled>
