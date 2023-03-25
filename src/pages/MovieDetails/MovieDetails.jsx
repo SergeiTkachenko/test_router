@@ -47,7 +47,7 @@ export default function MovieDetails() {
           backgroundPosition: 'center center',
           height: '100%',
           width: '100%',
-          padding: '0 15px 15px 30px',
+          padding: '0 15px 15px 15px',
           marginBottom: '15px',
         }}
       >

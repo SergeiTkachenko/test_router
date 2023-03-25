@@ -17,8 +17,11 @@ export const MovieListStyled = styled.ul`
 export const MovieItemStyled = styled.li`
   padding: 5px;
   border-radius: 5px;
-  width: 100%;
+  width: 250px;
   background: #67d4f0ff;
+
+  text-align: center;
+  justify-content: center;
 
   &:not(:last-child) {
     @media screen and (max-width: 767px) {

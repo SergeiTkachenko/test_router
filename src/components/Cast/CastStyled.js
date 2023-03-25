@@ -18,7 +18,9 @@ export const CastItemStyled = styled.li`
   padding: 5px;
   border-radius: 5px;
   width: 100%;
-  background: #e9f5f8ff;
+  background: #67d4f0ff;
+  justify-content: center;
+  display: grid;
 
   &:not(:last-child) {
     @media screen and (max-width: 767px) {

@@ -49,8 +49,15 @@ export const DetailsWrap = styled.div`
 `;
 
 export const ImgDetails = styled.img`
-  height: 400px;
+  /* height: 400px; */
   border-radius: 5px;
+  @media screen and (min-width: 768px) {
+    width: 250px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 400px;
+  }
 `;
 
 export const TitleStyled = styled.h2`

@@ -18,6 +18,7 @@ export default function MovieList({ movies }) {
                 src={poster_path ? BASE_IMG_URL + poster_path : defaultImg}
                 alt={title}
                 onError={e => (e.target.src = defaultImg)}
+                style={{ objectFit: 'cover' }}
               />
 
               <h2>{title ?? name}</h2>
