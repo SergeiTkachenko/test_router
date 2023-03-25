@@ -60,7 +60,9 @@ export default function Navigation() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    searchParams({ query: e.target.query.value });
+    searchParams({ query: e.target.query.value, page: 1 });
+    setValue(e.target.query.value);
+    setPage(1);
   };
 
   if (query) {
