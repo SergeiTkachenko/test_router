@@ -13,6 +13,7 @@ import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getMoviesByQuery } from 'services/API';
 import { toast } from 'react-toastify';
+import headerBkg from '../../images/header-bkg.jpg';
 
 export default function Navigation() {
   const [movies, setMovies] = useState([]);
@@ -67,24 +68,34 @@ export default function Navigation() {
   if (query) {
     return (
       <div>
-        <NavigationStyled>
-          <NavLinkStyled to="/">Trending</NavLinkStyled>
-          <NavLinkStyled to="/top_movies">Top rated</NavLinkStyled>
-          <NavLinkStyled to="/popular">Popular</NavLinkStyled>
-          <NavLinkStyled to="/upcoming">Upcoming</NavLinkStyled>
-        </NavigationStyled>
-        <div>
-          {loading && <Spiner></Spiner>}
-          <FormStyled onSubmit={handleSubmit}>
-            <InputStyled
-              value={value}
-              onChange={e => setValue(e.target.value)}
-              type="text"
-              name="query"
-              placeholder="Search value"
-            />
-            <SearchBtn>Search</SearchBtn>
-          </FormStyled>
+        <div
+          style={{
+            backgroundImage: ` linear-gradient(to top, rgba(14, 48, 241, 0.3), rgba(117, 141, 199, 0.4)), url(${headerBkg})`,
+            padding: '20px',
+            marginBottom: '20px',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center center',
+          }}
+        >
+          <NavigationStyled>
+            <NavLinkStyled to="/">Trending</NavLinkStyled>
+            <NavLinkStyled to="/top_movies">Top rated</NavLinkStyled>
+            <NavLinkStyled to="/popular">Popular</NavLinkStyled>
+            <NavLinkStyled to="/upcoming">Upcoming</NavLinkStyled>
+          </NavigationStyled>
+          <div>
+            {loading && <Spiner></Spiner>}
+            <FormStyled onSubmit={handleSubmit}>
+              <InputStyled
+                value={value}
+                onChange={e => setValue(e.target.value)}
+                type="text"
+                name="query"
+                placeholder="Search value"
+              />
+              <SearchBtn>Search</SearchBtn>
+            </FormStyled>
+          </div>
         </div>
         <MovieList movies={movies} />
       </div>
@@ -92,24 +103,34 @@ export default function Navigation() {
   } else {
     return (
       <div>
-        <NavigationStyled>
-          <NavLinkStyled to="/">Trending</NavLinkStyled>
-          <NavLinkStyled to="/top_movies">Top rated</NavLinkStyled>
-          <NavLinkStyled to="/popular">Popular</NavLinkStyled>
-          <NavLinkStyled to="/upcoming">Upcoming</NavLinkStyled>
-        </NavigationStyled>
-        <div>
-          {loading && <Spiner></Spiner>}
-          <FormStyled onSubmit={handleSubmit}>
-            <InputStyled
-              value={value}
-              onChange={e => setValue(e.target.value)}
-              type="text"
-              name="query"
-              placeholder="Search value"
-            />
-            <SearchBtn>Search</SearchBtn>
-          </FormStyled>
+        <div
+          style={{
+            backgroundImage: ` linear-gradient(to top, rgba(14, 48, 241, 0.3), rgba(117, 141, 199, 0.4)), url(${headerBkg})`,
+            backgroundSize: 'cover',
+            padding: '20px',
+            marginBottom: '20px',
+            backgroundPosition: 'center center',
+          }}
+        >
+          <NavigationStyled>
+            <NavLinkStyled to="/">Trending</NavLinkStyled>
+            <NavLinkStyled to="/top_movies">Top rated</NavLinkStyled>
+            <NavLinkStyled to="/popular">Popular</NavLinkStyled>
+            <NavLinkStyled to="/upcoming">Upcoming</NavLinkStyled>
+          </NavigationStyled>
+          <div>
+            {loading && <Spiner></Spiner>}
+            <FormStyled onSubmit={handleSubmit}>
+              <InputStyled
+                value={value}
+                onChange={e => setValue(e.target.value)}
+                type="text"
+                name="query"
+                placeholder="Search value"
+              />
+              <SearchBtn>Search</SearchBtn>
+            </FormStyled>
+          </div>
         </div>
         <Suspense fallback={<Spiner />}>
           <Outlet />
