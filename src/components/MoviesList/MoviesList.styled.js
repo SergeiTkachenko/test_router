@@ -18,7 +18,7 @@ export const MovieItemStyled = styled.li`
   padding: 5px;
   border-radius: 5px;
   width: 100%;
-  background: #e9f5f8ff;
+  background: #67d4f0ff;
 
   &:not(:last-child) {
     @media screen and (max-width: 767px) {
@@ -43,8 +43,8 @@ export const MovieItemStyled = styled.li`
   &:hover,
   &:focus {
     cursor: pointer;
-    box-shadow: rgba(77, 41, 238, 0.5) 0px 15px 25px 10px,
-      rgba(0, 4, 10, 0.5) 0px 10px 15px -2px;
+    box-shadow: rgba(77, 41, 238, 1) 0px 15px 25px 10px,
+      rgba(0, 4, 10, 0.9) 0px 10px 15px -2px;
     transform: scale(1.02);
   }
 `;
