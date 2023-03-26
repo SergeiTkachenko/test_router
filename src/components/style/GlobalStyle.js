@@ -19,8 +19,7 @@ html {
 }
 
 #root {
-background-color: #280569;
-  
+  background: repeating-linear-gradient(45deg, black 1% 3%, #280569 5% 1%);
 }
 
 *,

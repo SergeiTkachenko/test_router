@@ -18,7 +18,7 @@ export const CastItemStyled = styled.li`
   padding: 5px;
   border-radius: 5px;
   width: 100%;
-  background: #67d4f0ff;
+  background: #4a47f5ff;
   justify-content: center;
   display: grid;
 
@@ -45,8 +45,8 @@ export const CastItemStyled = styled.li`
   &:hover,
   &:focus {
     cursor: pointer;
-    box-shadow: rgba(0, 1, 2, 0.25) 0px 15px 20px 10px,
-      rgba(0, 4, 10, 0.25) 0px 10px 10px -2px;
+    box-shadow: rgba(77, 41, 238, 1) 0px 15px 25px 10px,
+      rgba(0, 4, 10, 0.9) 0px 10px 15px -2px;
     transform: scale(1.03);
   }
 `;

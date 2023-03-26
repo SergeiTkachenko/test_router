@@ -7,6 +7,7 @@ import {
   InputStyled,
   NavigationStyled,
   NavLinkStyled,
+  NavigationContainer,
 } from './Navigation.styled';
 import MovieList from 'components/MoviesList/MovieList';
 import { useEffect, useState } from 'react';
@@ -70,11 +71,9 @@ export default function Navigation() {
   if (query) {
     return (
       <div>
-        <div
+        <NavigationContainer
           style={{
             backgroundImage: ` linear-gradient(to top, rgba(3, 20, 119, 0.4), rgba(4, 55, 173, 0.4)), url(${headerBkg})`,
-            padding: '30px',
-            marginBottom: '20px',
             backgroundSize: 'cover',
             backgroundPosition: 'center center',
           }}
@@ -98,18 +97,16 @@ export default function Navigation() {
               <SearchBtn>Search</SearchBtn>
             </FormStyled>
           </div>
-        </div>
+        </NavigationContainer>
         <MovieList movies={movies} />
       </div>
     );
   } else {
     return (
       <div>
-        <div
+        <NavigationContainer
           style={{
             backgroundImage: ` linear-gradient(to top, rgba(3, 20, 119, 0.4), rgba(4, 55, 173, 0.4)), url(${headerBkg})`,
-            padding: '30px',
-            marginBottom: '20px',
             backgroundSize: 'cover',
             backgroundPosition: 'center center',
           }}
@@ -133,7 +130,7 @@ export default function Navigation() {
               <SearchBtn>Search</SearchBtn>
             </FormStyled>
           </div>
-        </div>
+        </NavigationContainer>
         <Suspense fallback={<Spiner />}>
           <Outlet />
         </Suspense>

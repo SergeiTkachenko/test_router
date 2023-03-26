@@ -1,6 +1,14 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+export const NavigationContainer = styled.header`
+  margin-bottom: 20px;
+  padding: 30px;
+  box-shadow: 0 0 5px #380bdccc, 0 0 10px #380bdccc, 0 0 15px #380bdccc,
+    0 0 20px #380bdccc, 0 0 25px #380bdccc, 0 0 30px #380bdccc,
+    inset 0 0 10px #380bdccc, inset 0 0 20px #380bdccc, inset 0 0 22px #380bdccc;
+`;
+
 export const NavigationStyled = styled.div`
   height: 100px;
   gap: 6px;

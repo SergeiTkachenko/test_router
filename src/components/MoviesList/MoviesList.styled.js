@@ -18,7 +18,7 @@ export const MovieItemStyled = styled.li`
   padding: 5px;
   border-radius: 5px;
   width: 250px;
-  background: #67d4f0ff;
+  background: #4a47f5ff;
 
   text-align: center;
   justify-content: center;
@@ -37,6 +37,9 @@ export const MovieItemStyled = styled.li`
   @media screen and (min-width: 1280px) {
     width: 280px;
   }
+
+  box-shadow: rgba(77, 41, 238, 1) 0px 3px 30px 2px,
+    rgba(0, 4, 10, 0.9) 0px 10px 5px -2px;
 
   transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),

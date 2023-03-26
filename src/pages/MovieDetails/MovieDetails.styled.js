@@ -2,6 +2,10 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const DetailsContainer = styled.div`
+  box-shadow: 0 0 5px #380bdccc, 0 0 10px #380bdccc, 0 0 15px #380bdccc,
+    0 0 20px #380bdccc, 0 0 25px #380bdccc, 0 0 30px #380bdccc,
+    inset 0 0 10px #380bdccc, inset 0 0 20px #380bdccc, inset 0 0 22px #380bdccc;
+
   @media screen and (max-width: 768px) {
     max-width: 740px;
     display: flex;
@@ -61,7 +65,7 @@ export const ImgDetails = styled.img`
 `;
 
 export const TitleStyled = styled.h2`
-  background-color: rgba(77, 101, 161, 0.7);
+  background-color: rgba(34, 44, 175, 0.7);
   display: flex;
   justify-content: center;
   padding: 10px;
@@ -69,7 +73,7 @@ export const TitleStyled = styled.h2`
 `;
 
 export const OverviewStyled = styled.p`
-  background-color: rgba(77, 101, 161, 0.7);
+  background-color: rgba(34, 44, 175, 0.7);
   height: 100%;
   padding: 10px;
   transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -81,13 +85,6 @@ export const OverviewStyled = styled.p`
 
   @media screen and (min-width: 768px) {
     font-size: 24px;
-    &:hover,
-    &:focus {
-      background-color: #3460da;
-      box-shadow: rgba(45, 78, 224, 0.25) 0px 10px 20px 10px,
-        rgba(12, 63, 231, 0.3) 0px 10px 7px -2px;
-      transform: scale(1.1);
-    }
   }
 `;
 
