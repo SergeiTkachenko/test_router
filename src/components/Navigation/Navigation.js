@@ -53,7 +53,6 @@ export default function Navigation() {
 
       if (bottom) {
         setPage(page => page + 1);
-        console.log(1);
       }
     }
 
