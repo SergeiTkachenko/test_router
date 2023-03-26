@@ -8,6 +8,7 @@ import {
   NavigationStyled,
   NavLinkStyled,
   NavigationContainer,
+  SearchErr,
 } from './Navigation.styled';
 import MovieList from 'components/MoviesList/MovieList';
 import { useEffect, useState } from 'react';
@@ -98,7 +99,11 @@ export default function Navigation() {
             </FormStyled>
           </div>
         </NavigationContainer>
-        <MovieList movies={movies} />
+        {movies.length <= 0 ? (
+          <SearchErr>Invalid search value, try again</SearchErr>
+        ) : (
+          <MovieList movies={movies} />
+        )}
       </div>
     );
   } else {

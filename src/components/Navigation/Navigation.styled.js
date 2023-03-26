@@ -112,3 +112,10 @@ export const SearchBtn = styled.button`
       rgba(12, 63, 231, 0.3) 0px 10px 7px -2px;
   }
 `;
+
+export const SearchErr = styled.p`
+  text-align: center;
+  padding: 50px 0 50% 0;
+  font-size: 46px;
+  font-weight: 600;
+`;

@@ -32,8 +32,8 @@ export default function Cast() {
               src={profile_path ? BASE_IMG_URL + profile_path : defaultImg}
               alt={name}
             />
-            <h3>{name}</h3>
-            <h4>As: {character}</h4>
+            <h3>{name ? name : 'No name'}</h3>
+            <h4>As: {character ? character : 'No characrer name'}</h4>
           </CastItemStyled>
         ))}
       </CastListStyled>

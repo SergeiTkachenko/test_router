@@ -10,7 +10,7 @@ export default function MovieList({ movies }) {
 
   return (
     <MovieListStyled>
-      {movies.map(({ id, title, name, poster_path }) => (
+      {movies.map(({ id, title, name, poster_path, vote_average }) => (
         <MovieItemStyled key={id}>
           <NavLink state={{ from: location }} to={`/movies/${id}`}>
             <div>
@@ -22,6 +22,7 @@ export default function MovieList({ movies }) {
               />
 
               <h2>{title ?? name}</h2>
+              <p>Rating {vote_average.toFixed(1)}</p>
             </div>
           </NavLink>
         </MovieItemStyled>
