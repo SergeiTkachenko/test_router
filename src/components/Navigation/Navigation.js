@@ -43,22 +43,23 @@ export default function Navigation() {
       .finally(() => setLoading(false));
   }, [query, page]);
 
-  function handleScroll() {
-    const bottom =
-      Math.ceil(window.innerHeight + window.scrollY + 400) >=
-      document.documentElement.scrollHeight;
-
-    if (bottom) {
-      setPage(page => page + 1);
-      console.log(1);
-    }
-  }
-  console.log(2);
-
   useEffect(() => {
+    if (!query) return;
+
+    function handleScroll() {
+      const bottom =
+        Math.ceil(window.innerHeight + window.scrollY + 400) >=
+        document.documentElement.scrollHeight;
+
+      if (bottom) {
+        setPage(page => page + 1);
+        console.log(1);
+      }
+    }
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [query]);
 
   const handleSubmit = e => {
     e.preventDefault();

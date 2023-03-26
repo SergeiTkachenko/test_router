@@ -77,14 +77,17 @@ export const OverviewStyled = styled.p`
     box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
     transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 5px;
+  font-size: 20px;
 
-  &:hover,
-  &:focus {
-    color: white;
-    background-color: #3460da;
-    box-shadow: rgba(45, 78, 224, 0.25) 0px 10px 20px 10px,
-      rgba(12, 63, 231, 0.3) 0px 10px 7px -2px;
-    transform: scale(1.1);
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+    &:hover,
+    &:focus {
+      background-color: #3460da;
+      box-shadow: rgba(45, 78, 224, 0.25) 0px 10px 20px 10px,
+        rgba(12, 63, 231, 0.3) 0px 10px 7px -2px;
+      transform: scale(1.1);
+    }
   }
 `;
 
