@@ -7,6 +7,9 @@ export const Container = styled.div`
     #052650 9% 9%,
     #383781ff 10% 10%
   );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 101vh;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 16px;
